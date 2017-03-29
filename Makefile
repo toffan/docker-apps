@@ -1,4 +1,4 @@
-all: gimp nginx-dir pulseview sigrok-cli
+all: gimp nginx-dir poezio pulseview sigrok-cli
 .PHONY: all
 
 alpine:
@@ -16,6 +16,9 @@ nginx:
 
 nginx-dir: nginx
 	docker build -t toffan/nginx-dir nginx-dir
+
+poezio: alpine
+	docker build -t toffan/poezio poezio
 
 pulseview: archlinux
 	docker build -t toffan/pulseview pulseview
