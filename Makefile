@@ -1,4 +1,4 @@
-all: gimp nginx-dir poezio pulseview sigrok-cli
+all: gimp nginx-dir poezio pulseview rocketchat sigrok-cli
 .PHONY: all
 
 alpine:
@@ -7,6 +7,9 @@ alpine:
 archlinux:
 	docker pull base/archlinux
 	docker build -t toffan/archlinux archlinux
+
+debian:
+	docker pull debian
 
 gimp: alpine
 	docker build -t toffan/gimp gimp
@@ -22,6 +25,9 @@ poezio: alpine
 
 pulseview: archlinux
 	docker build -t toffan/pulseview pulseview
+
+rocketchat: debian
+	docker build -t toffan/rocketchat rocketchat
 
 sigrok-cli: archlinux
 	docker build -t toffan/sigrok-cli
