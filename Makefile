@@ -1,4 +1,4 @@
-all: gimp nginx-dir poezio pulseview rocketchat sigrok-cli
+all: gimp grip nginx-dir poezio pulseview rocketchat sigrok-cli
 .PHONY: all
 
 alpine:
@@ -13,6 +13,9 @@ debian:
 
 gimp: alpine
 	docker build -t toffan/gimp gimp
+
+grip: alpine
+	docker build -t toffan/grip grip
 
 nginx:
 	docker pull nginx:alpine
