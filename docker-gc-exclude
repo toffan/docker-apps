@@ -1,0 +1,11 @@
+alpine:latest
+base/archlinux:latest
+debian:latest
+mysql:latest
+nginx:alpine
+python:.*
+traefik:latest
+
+toffan/.*
+
+spotify/docker-gc:latest
