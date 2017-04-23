@@ -1,4 +1,4 @@
-all: gimp grip nginx-dir poezio pulseview rocketchat sigrok-cli
+all: discord gimp grip nginx-dir poezio pulseview rocketchat sigrok-cli
 .PHONY: all
 
 alpine:
@@ -10,6 +10,9 @@ archlinux:
 
 debian:
 	docker pull debian
+
+discord: debian
+	docker build -t toffan/discord discord
 
 gimp: alpine
 	docker build -t toffan/gimp gimp
