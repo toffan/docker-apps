@@ -1,7 +1,7 @@
 FROM toffan/archlinux
 
-ARG UID=1000
-ARG GID=100
+ARG UID
+ARG GID
 ARG USERNAME=sigrok
 
 ADD build.sh /build/

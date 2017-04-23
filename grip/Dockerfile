@@ -1,7 +1,7 @@
 FROM alpine
 
-ARG UID=1000
-ARG GID=100
+ARG UID
+ARG GID
 ARG USERNAME=grip
 
 ADD build.sh /build/
