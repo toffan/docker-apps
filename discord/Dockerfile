@@ -3,7 +3,7 @@ FROM debian
 ARG UID
 ARG GID
 ARG USERNAME=discord
-ARG VERSION=0.0.15
+ARG VERSION
 
 ADD build.sh /build/
 RUN /build/build.sh

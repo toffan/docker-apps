@@ -3,7 +3,7 @@ FROM debian
 ARG UID
 ARG GID
 ARG USERNAME=rocketchat
-ARG VERSION=2.6.1
+ARG VERSION
 
 ADD build.sh /build/
 RUN /build/build.sh
