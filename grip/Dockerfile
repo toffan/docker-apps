@@ -6,7 +6,7 @@ ARG USERNAME=grip
 
 ADD build.sh /build/
 ADD wrapper /usr/local/bin/
-RUN /build/build.sh && rm -rf /build/
+RUN /build/build.sh
 
 VOLUME "/home/${USERNAME}/shared/"
 

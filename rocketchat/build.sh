@@ -19,6 +19,7 @@ install() {
 }
 
 post_install() {
+    getent group "$GID" || groupadd -g "$GID" "$USERNAME"
     useradd -ms /bin/nologin -Ng "$GID" -u "$UID" "$USERNAME"
 }
 

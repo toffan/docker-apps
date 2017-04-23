@@ -3,15 +3,31 @@
 BUILD_PACKAGES="shadow"
 RUNTIME_PACKAGES="dbus-x11 ttf-dejavu numix-themes-gtk2 gimp"
 
-set -x -e
+pre_install() {
+    mkdir -p "$builddir" && cd "$builddir"
+    apk add --update --no-cache $BUILD_PACKAGES $RUNTIME_PACKAGES
+}
 
-mkdir -p /build && cd /build
+install() {
+    :
+}
 
-# Prepare
-apk add --update --no-cache $BUILD_PACKAGES $RUNTIME_PACKAGES
+post_install() {
+    getent group "$GID" || groupadd -g "$GID" "$USERNAME"
+    useradd -ms /bin/nologin -Ng "$GID" -u "$UID" "$USERNAME"
+}
 
-useradd -ms /bin/nologin -Ng "$GID" -u "$UID" "$USERNAME"
+clean() {
+    apk del --rdepends $BUILD_PACKAGES
+    rm -rf /var/cache/apk/*
+    cd $OLDPWD && rm -rf /build/
+}
 
-# Clean
-apk del --rdepends $BUILD_PACKAGES
-rm -rf /var/cache/apk/*
+
+set -xe
+builddir="${1:-/build}"
+
+pre_install
+install
+post_install
+clean

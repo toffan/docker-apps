@@ -5,7 +5,7 @@ ARG GID
 ARG USERNAME=gimp
 
 ADD build.sh /build/
-RUN /build/build.sh && rm -rf /build/
+RUN /build/build.sh
 
 VOLUME /tmp/.X11-unix
 VOLUME "/home/${USERNAME}/shared"

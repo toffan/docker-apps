@@ -5,7 +5,7 @@ ARG GID
 ARG USERNAME=poezio
 
 ADD build.sh /build/
-RUN /build/build.sh && rm -rf /build/
+RUN /build/build.sh
 
 VOLUME "/home/${USERNAME}/.config/poezio"
 VOLUME "/home/${USERNAME}/.local/share/poezio"
