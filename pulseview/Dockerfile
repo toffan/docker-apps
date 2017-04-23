@@ -13,4 +13,4 @@ VOLUME "/home/${USERNAME}/shared"
 USER "$USERNAME"
 WORKDIR "/home/${USERNAME}"
 
-ENTRYPOINT pulseview
+ENTRYPOINT ["/usr/bin/pulseview"]

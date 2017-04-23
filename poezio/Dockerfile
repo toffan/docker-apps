@@ -13,4 +13,4 @@ VOLUME "/home/${USERNAME}/.local/share/poezio"
 USER "$USERNAME"
 WORKDIR "/home/${USERNAME}"
 
-ENTRYPOINT poezio
+ENTRYPOINT ["/usr/bin/poezio"]

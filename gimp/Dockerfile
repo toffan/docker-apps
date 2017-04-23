@@ -15,4 +15,4 @@ USER "$USERNAME"
 WORKDIR "/home/${USERNAME}"
 ADD .gtkrc-2.0 ./
 
-ENTRYPOINT gimp
+ENTRYPOINT ["/usr/bin/gimp"]

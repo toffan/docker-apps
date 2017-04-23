@@ -12,4 +12,4 @@ VOLUME "/home/${USERNAME}/shared"
 USER "$USERNAME"
 WORKDIR "/home/${USERNAME}"
 
-ENTRYPOINT sigrok-cli
+ENTRYPOINT ["/usr/bin/sigrok-cli"]

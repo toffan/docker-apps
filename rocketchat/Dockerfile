@@ -15,4 +15,4 @@ VOLUME "/home/${USERNAME}/.config/Rocket.Chat+"
 USER "$USERNAME"
 WORKDIR "/home/${USERNAME}"
 
-ENTRYPOINT rocketchat
+ENTRYPOINT ["/usr/bin/rocketchat"]
